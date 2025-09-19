@@ -14,20 +14,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ['Playfair Display', 'serif'],
-        body: ['Inter', 'sans-serif'],
-      },
-      spacing: {
-        'space-1': 'var(--space-1)',
-        'space-2': 'var(--space-2)',
-        'space-3': 'var(--space-3)',
-        'space-4': 'var(--space-4)',
-        'space-6': 'var(--space-6)',
-        'space-8': 'var(--space-8)',
-      },
-      boxShadow: {
-        'soft': 'var(--shadow-soft)',
-        'elegant': 'var(--shadow-elegant)',
+        sans: ['Inter', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",
