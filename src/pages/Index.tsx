@@ -1,7 +1,10 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
+import Membership from "@/components/Membership";
+import Goals from "@/components/Goals";
 import Work from "@/components/Work";
+import Support from "@/components/Support";
 import Contact from "@/components/Contact";
 
 const Index = () => {
@@ -10,7 +13,10 @@ const Index = () => {
       <Header />
       <Hero />
       <About />
+      <Membership />
+      <Goals />
       <Work />
+      <Support />
       <Contact />
     </div>
   );
