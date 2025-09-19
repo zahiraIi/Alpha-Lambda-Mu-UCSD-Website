@@ -62,11 +62,11 @@ const Hero = () => {
             transition={{ duration: 0.6, delay: 0.9 }}
           >
             The nation's first Muslim-interest fraternity. Building Muslim men through the Prophetic example with 
-            <motion.span 
-              className="text-accent font-medium"
-              whileHover={{ scale: 1.1, color: "#fff" }}
-              transition={{ duration: 0.2 }}
-            >
+          <motion.span 
+            className="text-accent font-medium hover:text-white transition-colors duration-200"
+            whileHover={{ scale: 1.1 }}
+            transition={{ duration: 0.2 }}
+          >
               {" "}faith, service, and brotherhood
             </motion.span>.
           </motion.p>
@@ -119,7 +119,7 @@ const Hero = () => {
             className="text-white/60 hover:text-white transition-colors inline-block"
             animate={{ y: [0, -10, 0] }}
             transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-            whileHover={{ scale: 1.2, color: "#fff" }}
+            whileHover={{ scale: 1.2 }}
           >
             <ArrowDown size={32} />
           </motion.a>

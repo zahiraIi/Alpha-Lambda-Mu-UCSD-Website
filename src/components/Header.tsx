@@ -39,8 +39,7 @@ const Header = () => {
             />
             <div>
               <motion.h1 
-                className="font-display font-semibold text-lg text-foreground"
-                whileHover={{ color: "hsl(var(--primary))" }}
+                className="font-display font-semibold text-lg text-foreground hover:text-primary transition-colors duration-200"
               >
                 Alpha Lambda Mu
               </motion.h1>
@@ -144,7 +143,7 @@ const Header = () => {
                     initial={{ x: -50, opacity: 0 }}
                     animate={{ x: 0, opacity: 1 }}
                     transition={{ duration: 0.3, delay: index * 0.1 }}
-                    whileHover={{ x: 10, color: "hsl(var(--primary))" }}
+                    whileHover={{ x: 10 }}
                   >
                     {item.name}
                   </motion.a>
