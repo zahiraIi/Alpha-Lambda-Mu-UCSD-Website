@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Users, TrendingUp, Heart, Target } from "lucide-react";
 
@@ -41,36 +42,98 @@ const Membership = () => {
         </div>
 
         {/* Membership Growth Chart */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-space-4 mb-space-8">
+        <motion.div 
+          className="grid grid-cols-2 md:grid-cols-4 gap-space-4 mb-space-8"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={{
+            visible: {
+              transition: {
+                staggerChildren: 0.15
+              }
+            }
+          }}
+        >
           {stats.map((stat, index) => {
             const Icon = stat.icon;
             return (
-              <Card 
+              <motion.div
                 key={stat.year}
-                className={`text-center hover-lift ${stat.projected ? 'border-accent border-2' : ''}`}
-                style={{ animationDelay: `${index * 0.1}s` }}
+                variants={{
+                  hidden: { y: 50, opacity: 0, scale: 0.8 },
+                  visible: { 
+                    y: 0, 
+                    opacity: 1, 
+                    scale: 1,
+                    transition: { duration: 0.6 }
+                  }
+                }}
+                whileHover={{ 
+                  scale: 1.05, 
+                  rotateY: 10,
+                  transition: { duration: 0.3 }
+                }}
+                whileTap={{ scale: 0.95 }}
               >
-                <CardHeader className="pb-2">
-                  <div className="flex justify-center mb-2">
-                    <Icon className={`h-8 w-8 ${stat.projected ? 'text-accent' : 'text-primary'}`} />
-                  </div>
-                  <CardTitle className="font-display text-2xl">
-                    {stat.members}
-                    {stat.projected && <span className="text-accent">*</span>}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="font-body text-sm text-muted-foreground">
-                    {stat.year}
-                    {stat.projected && (
-                      <span className="block text-xs text-accent">(Projected)</span>
-                    )}
-                  </p>
-                </CardContent>
-              </Card>
+                <Card 
+                  className={`text-center card-hover glow-on-hover relative overflow-hidden ${stat.projected ? 'border-accent border-2' : ''}`}
+                >
+                  {stat.projected && (
+                    <motion.div
+                      className="absolute inset-0 bg-gradient-to-br from-accent/10 to-transparent"
+                      animate={{ opacity: [0.5, 1, 0.5] }}
+                      transition={{ duration: 2, repeat: Infinity }}
+                    />
+                  )}
+                  
+                  <CardHeader className="pb-2 relative z-10">
+                    <motion.div 
+                      className="flex justify-center mb-2"
+                      whileHover={{ rotate: 360 }}
+                      transition={{ duration: 0.6 }}
+                    >
+                      <Icon className={`h-8 w-8 ${stat.projected ? 'text-accent' : 'text-primary'}`} />
+                    </motion.div>
+                    <CardTitle className="font-display text-2xl">
+                      <motion.span
+                        initial={{ scale: 0 }}
+                        whileInView={{ scale: 1 }}
+                        transition={{ duration: 0.5, delay: index * 0.1, type: "spring", bounce: 0.5 }}
+                      >
+                        {stat.members}
+                      </motion.span>
+                      {stat.projected && (
+                        <motion.span 
+                          className="text-accent"
+                          animate={{ scale: [1, 1.2, 1] }}
+                          transition={{ duration: 1.5, repeat: Infinity }}
+                        >
+                          *
+                        </motion.span>
+                      )}
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent className="relative z-10">
+                    <p className="font-body text-sm text-muted-foreground">
+                      {stat.year}
+                      {stat.projected && (
+                        <motion.span 
+                          className="block text-xs text-accent"
+                          initial={{ opacity: 0 }}
+                          whileInView={{ opacity: 1 }}
+                          transition={{ delay: 0.5 }}
+                        >
+                          (Projected)
+                        </motion.span>
+                      )}
+                    </p>
+                  </CardContent>
+                </Card>
+              </motion.div>
             );
           })}
-        </div>
+        </motion.div>
 
         {/* Growth Message */}
         <div className="grid md:grid-cols-2 gap-space-8 items-center">

@@ -129,18 +129,72 @@
 }
 
 @layer components {
-  /* Button hover effects */
-  .hover-lift {
-    @apply transition-all duration-300 hover:transform hover:-translate-y-1;
+  /* Enhanced Button Effects */
+  .btn-premium {
+    @apply relative overflow-hidden transform transition-all duration-300;
+    @apply before:absolute before:inset-0 before:bg-gradient-to-r before:from-white/20 before:to-transparent;
+    @apply before:translate-x-[-100%] before:transition-transform before:duration-500;
   }
   
-  .hover-lift:hover {
-    box-shadow: var(--shadow-elegant);
+  .btn-premium:hover {
+    @apply scale-105 shadow-lg;
   }
   
-  /* Text animations */
-  .text-reveal {
-    @apply animate-in fade-in slide-in-from-bottom-2 duration-700;
+  .btn-premium:hover:before {
+    @apply translate-x-[100%];
+  }
+  
+  .btn-premium:active {
+    @apply scale-95;
+    transition-duration: 100ms;
+  }
+  
+  /* Magnetic Button Effect */
+  .btn-magnetic {
+    @apply transition-all duration-200 ease-out;
+  }
+  
+  /* Card Hover Effects */
+  .card-hover {
+    @apply transition-all duration-500 ease-out hover:scale-[1.02];
+    @apply hover:rotate-1 hover:shadow-2xl;
+  }
+  
+  /* Smooth Glow Effect */
+  .glow-on-hover {
+    @apply relative transition-all duration-300;
+  }
+  
+  .glow-on-hover:hover {
+    @apply shadow-[0_0_30px_rgba(var(--primary-rgb),0.3)];
+  }
+  
+  /* Loading Shimmer */
+  .shimmer {
+    @apply relative overflow-hidden;
+  }
+  
+  .shimmer::after {
+    @apply absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent;
+    @apply translate-x-[-100%] animate-[shimmer_2s_infinite];
+    content: '';
+  }
+  
+  /* Ripple Effect */
+  .ripple {
+    @apply relative overflow-hidden;
+  }
+  
+  /* Text Gradient Animation */
+  .text-gradient-animate {
+    @apply bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent;
+    background-size: 200% 100%;
+    animation: gradient-shift 3s ease-in-out infinite;
+  }
+  
+  /* Floating Animation */
+  .float-gentle {
+    animation: float-gentle 6s ease-in-out infinite;
   }
   
   /* Section spacing */
@@ -157,4 +211,20 @@
   .overlay-gradient {
     @apply relative before:absolute before:inset-0 before:bg-gradient-to-t before:from-black/60 before:to-transparent;
   }
+}
+
+/* Custom Animations */
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+@keyframes gradient-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@keyframes float-gentle {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
 }
