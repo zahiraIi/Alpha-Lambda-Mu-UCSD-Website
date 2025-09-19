@@ -2,95 +2,115 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* ALM Portfolio Design System - Inspired by warm earth tones and sophisticated typography */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Base colors - warm earth palette */
+    --background: 48 20% 97%; /* Warm cream */
+    --foreground: 28 25% 15%; /* Deep warm brown */
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    /* Card colors */
+    --card: 48 20% 97%;
+    --card-foreground: 28 25% 15%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    /* Popover colors */
+    --popover: 48 20% 97%;
+    --popover-foreground: 28 25% 15%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Primary brand colors - deep forest green */
+    --primary: 158 25% 20%;
+    --primary-foreground: 48 20% 97%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Secondary colors - warm beige */
+    --secondary: 40 15% 85%;
+    --secondary-foreground: 28 25% 15%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Muted colors - soft neutrals */
+    --muted: 40 10% 88%;
+    --muted-foreground: 28 10% 45%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Accent colors - warm gold */
+    --accent: 38 35% 65%;
+    --accent-foreground: 28 25% 15%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    /* Destructive colors */
+    --destructive: 0 65% 55%;
+    --destructive-foreground: 48 20% 97%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    /* Border and input colors */
+    --border: 40 10% 82%;
+    --input: 40 10% 82%;
+    --ring: 158 25% 20%;
 
     --radius: 0.5rem;
 
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Custom design tokens for ALM */
+    --radius: 0.75rem;
+    
+    /* Typography scale */
+    --text-xs: 0.75rem;
+    --text-sm: 0.875rem;
+    --text-base: 1rem;
+    --text-lg: 1.125rem;
+    --text-xl: 1.25rem;
+    --text-2xl: 1.5rem;
+    --text-3xl: 1.875rem;
+    --text-4xl: 2.25rem;
+    
+    /* Spacing scale - 8px system */
+    --space-1: 0.5rem; /* 8px */
+    --space-2: 1rem;   /* 16px */
+    --space-3: 1.5rem; /* 24px */
+    --space-4: 2rem;   /* 32px */
+    --space-6: 3rem;   /* 48px */
+    --space-8: 4rem;   /* 64px */
+    
+    /* Gradients */
+    --gradient-warm: linear-gradient(135deg, hsl(var(--accent)) 0%, hsl(var(--primary)) 100%);
+    --gradient-subtle: linear-gradient(180deg, hsl(var(--background)) 0%, hsl(var(--muted)) 100%);
+    
+    /* Shadows */
+    --shadow-soft: 0 4px 20px -4px hsl(var(--primary) / 0.1);
+    --shadow-elegant: 0 10px 40px -10px hsl(var(--primary) / 0.15);
+    
+    /* Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    /* Dark theme with sophisticated warm tones */
+    --background: 28 25% 8%;
+    --foreground: 48 20% 95%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 28 25% 10%;
+    --card-foreground: 48 20% 95%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 28 25% 10%;
+    --popover-foreground: 48 20% 95%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 158 30% 70%;
+    --primary-foreground: 28 25% 8%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 28 15% 20%;
+    --secondary-foreground: 48 20% 95%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 28 10% 15%;
+    --muted-foreground: 40 8% 65%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 38 45% 55%;
+    --accent-foreground: 28 25% 8%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 65% 60%;
+    --destructive-foreground: 48 20% 95%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --border: 28 10% 25%;
+    --input: 28 10% 25%;
+    --ring: 158 30% 70%;
+    /* Dark theme specific tokens */
+    --shadow-soft: 0 4px 20px -4px hsl(0 0% 0% / 0.3);
+    --shadow-elegant: 0 10px 40px -10px hsl(0 0% 0% / 0.4);
   }
 }
 
@@ -100,6 +120,41 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-body leading-relaxed;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display leading-tight;
+  }
+}
+
+@layer components {
+  /* Button hover effects */
+  .hover-lift {
+    @apply transition-all duration-300 hover:transform hover:-translate-y-1;
+  }
+  
+  .hover-lift:hover {
+    box-shadow: var(--shadow-elegant);
+  }
+  
+  /* Text animations */
+  .text-reveal {
+    @apply animate-in fade-in slide-in-from-bottom-2 duration-700;
+  }
+  
+  /* Section spacing */
+  .section-padding {
+    @apply py-space-8 px-space-4;
+  }
+  
+  /* Grid layouts */
+  .grid-auto-fit {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+  
+  /* Image overlays */
+  .overlay-gradient {
+    @apply relative before:absolute before:inset-0 before:bg-gradient-to-t before:from-black/60 before:to-transparent;
   }
 }
