@@ -16,9 +16,6 @@ const Contact = () => {
             >
               @alm.at.ucsd
             </a>
-            <p className="text-lg md:text-xl text-muted-foreground">
-              UC San Diego, La Jolla CA
-            </p>
           </div>
         </div>
 
