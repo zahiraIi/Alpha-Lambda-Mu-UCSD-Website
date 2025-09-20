@@ -77,14 +77,14 @@
   }
 
   body {
-    @apply bg-background text-foreground;
-    font-family: 'Inter', sans-serif;
+    @apply bg-background text-foreground font-bold;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     line-height: 1.5;
   }
   
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Inter', sans-serif;
-    font-weight: 400;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 700;
     line-height: 1.2;
   }
 }

@@ -60,21 +60,21 @@ const ImageCollage = () => {
           {images.map((image, index) => (
             <div
               key={index}
-              className={`${image.gridClass} group relative overflow-hidden bg-background transition-all duration-500 ease-out hover:scale-[1.01]`}
+              className={`${image.gridClass} group`}
             >
-              <img
-                src={image.src}
-                alt={image.alt}
-                className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-              />
+              <div className="relative overflow-hidden bg-background transition-all duration-500 ease-out hover:scale-[1.01] mb-2">
+                <img
+                  src={image.src}
+                  alt={image.alt}
+                  className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                />
+              </div>
               
-              {/* Minimal text overlay */}
-              <div className="absolute bottom-0 left-0 right-0 bg-black/60 backdrop-blur-sm">
-                <div className="p-3 md:p-4">
-                  <h3 className="text-white font-medium text-sm md:text-base tracking-wide">
-                    {image.title}
-                  </h3>
-                </div>
+              {/* Caption below image */}
+              <div className="px-1">
+                <h3 className="text-foreground font-bold text-sm md:text-base tracking-wide">
+                  {image.title}
+                </h3>
               </div>
             </div>
           ))}
