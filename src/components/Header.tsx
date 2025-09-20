@@ -19,10 +19,46 @@ const Header = () => {
 
           {/* Navigation - Premium Apple-like style */}
           <div className="hidden md:flex items-center space-x-8">
-            <a href="#about" className="nav-link">About</a>
-            <a href="#membership" className="nav-link">Membership</a>
-            <a href="#goals" className="nav-link">Goals</a>
-            <a href="#support" className="nav-link">Support</a>
+            <a 
+              href="#about" 
+              className="nav-link"
+              onClick={(e) => {
+                e.preventDefault();
+                document.getElementById('about')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              }}
+            >
+              About
+            </a>
+            <a 
+              href="#membership" 
+              className="nav-link"
+              onClick={(e) => {
+                e.preventDefault();
+                document.getElementById('membership')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              }}
+            >
+              Membership
+            </a>
+            <a 
+              href="#goals" 
+              className="nav-link"
+              onClick={(e) => {
+                e.preventDefault();
+                document.getElementById('goals')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              }}
+            >
+              Goals
+            </a>
+            <a 
+              href="#support" 
+              className="nav-link"
+              onClick={(e) => {
+                e.preventDefault();
+                document.getElementById('support')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              }}
+            >
+              Support
+            </a>
           </div>
 
           {/* Mobile menu button */}
