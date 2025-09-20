@@ -44,16 +44,16 @@ const ImageCollage = () => {
   ];
 
   return (
-    <section id="collage" className="py-12 md:py-16">
-      <div className="max-w-7xl mx-auto px-4 md:px-6">
+    <section id="collage" className="py-16 md:py-24">
+      <div className="max-w-7xl mx-auto px-6 md:px-8">
         {/* Minimal grid layout */}
-        <div className="grid grid-cols-4 gap-1 md:gap-2 auto-rows-[200px] md:auto-rows-[280px]">
+        <div className="grid grid-cols-4 gap-2 md:gap-4 auto-rows-[200px] md:auto-rows-[280px]">
           {images.map((image, index) => (
             <div
               key={index}
               className={`${image.gridClass} group`}
             >
-              <div className="relative overflow-hidden bg-background transition-all duration-500 ease-out hover:scale-[1.01] mb-4">
+              <div className="relative overflow-hidden bg-background transition-all duration-500 ease-out hover:scale-[1.01] mb-6">
                 <img
                   src={image.src}
                   alt={image.alt}
@@ -62,7 +62,7 @@ const ImageCollage = () => {
               </div>
               
               {/* Clean typography below image */}
-              <div className="space-y-2">
+              <div className="space-y-4">
                 <h3 className="text-foreground font-bold text-base md:text-lg">
                   {image.title}
                 </h3>
@@ -82,7 +82,7 @@ const ImageCollage = () => {
         </div>
 
         {/* Minimal call to action */}
-        <div className="text-center mt-16">
+        <div className="text-center mt-24">
           <a 
             href="#membership"
             className="inline-block text-foreground font-medium hover:text-muted-foreground transition-colors duration-300"

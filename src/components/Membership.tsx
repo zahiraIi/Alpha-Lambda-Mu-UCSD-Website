@@ -54,11 +54,9 @@ const Membership = () => {
                 <div className="space-y-3">
                   <div className="flex items-center space-x-3">
                     <img src={icnaReliefLogo} alt="ICNA Relief" className="h-8 w-auto" />
-                    <span className="text-sm text-muted-foreground">ICNA Relief</span>
                   </div>
                   <div className="flex items-center space-x-3">
                     <img src={lampsOfLightLogo} alt="Lamps of Light" className="h-8 w-auto" />
-                    <span className="text-sm text-muted-foreground">Lamps of Light</span>
                   </div>
                   <p className="text-sm text-muted-foreground">• UC San Diego Student Organizations</p>
                 </div>
