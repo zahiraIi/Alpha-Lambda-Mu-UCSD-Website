@@ -3,6 +3,8 @@ import dinnerImage from "@/assets/alm-dinner.png";
 import kayakingImage from "@/assets/alm-kayaking.png";
 import sportsImage from "@/assets/alm-sports.png";
 import studyImage from "@/assets/alm-study.png";
+import meetingImage from "@/assets/alm-meeting.png";
+import brotherhoodImage from "@/assets/alm-brotherhood.png";
 
 const ImageCollage = () => {
   const images = [
@@ -28,6 +30,13 @@ const ImageCollage = () => {
       gridClass: "col-span-1 row-span-1"
     },
     {
+      src: meetingImage,
+      alt: "Brothers in discussion and meeting session",
+      title: "Brotherhood Meetings",
+      tags: ["Discussion", "Planning"],
+      gridClass: "col-span-1 row-span-1"
+    },
+    {
       src: sportsImage,
       alt: "Athletic activities and sports",
       title: "Athletic Activities",
@@ -40,6 +49,13 @@ const ImageCollage = () => {
       title: "Academic Excellence",
       tags: ["Education", "Growth"],
       gridClass: "col-span-1 row-span-1"
+    },
+    {
+      src: brotherhoodImage,
+      alt: "Brotherhood group photo by the lake at sunset",
+      title: "Brotherhood Unity",
+      tags: ["Brotherhood", "Unity", "Memories"],
+      gridClass: "col-span-2 row-span-1"
     }
   ];
 
