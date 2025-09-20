@@ -61,7 +61,7 @@ const Goals = () => {
         
         {/* Yearly Goals */}
         <div className="mb-20">
-          <h3 className="text-2xl font-medium mb-12">2024-2025 Goals</h3>
+          <h3 className="text-2xl font-medium mb-12">2025-2026 Goals</h3>
           <div className="grid md:grid-cols-3 gap-8">
             {yearlyGoals.map((goal, index) => (
               <div key={index} className="mws-frame">

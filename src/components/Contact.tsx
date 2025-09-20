@@ -22,7 +22,7 @@ const Contact = () => {
 
         {/* Footer Info */}
         <div className="flex justify-between items-end mt-8 text-sm text-muted-foreground">
-          <div>©2024</div>
+          <div>©2025</div>
           <div className="text-right">
             <div>Alpha Lambda Mu</div>
             <div>Muslim Fraternity</div>

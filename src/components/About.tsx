@@ -6,7 +6,7 @@ const About = () => {
           <h2 className="text-2xl font-medium mb-8 transition-all duration-300 hover:opacity-80">About ALM</h2>
           <div className="space-y-6 text-lg leading-relaxed">
             <p className="transition-all duration-300 hover:transform hover:translate-x-2">
-              Alpha Lambda Mu was founded at the University of California, San Diego in 2013 as the nation's first Muslim-interest fraternity.
+              Alpha Lambda Mu at the University of California, San Diego was one of the first Muslim-interest fraternity in the nation.
             </p>
             <p className="transition-all duration-300 hover:transform hover:translate-x-2">
               Our mission is to build Muslim men through the Prophetic example, emphasizing faith, service, and brotherhood in all our endeavors.

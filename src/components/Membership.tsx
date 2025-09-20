@@ -1,3 +1,6 @@
+import icnaReliefLogo from "@/assets/icna-relief-logo.png";
+import lampsOfLightLogo from "@/assets/lamps-of-light-logo.png";
+
 const Membership = () => {
   return (
     <section id="membership" className="mws-section">
@@ -48,10 +51,16 @@ const Membership = () => {
               
               <div>
                 <h4 className="font-medium mb-3">Community Partners</h4>
-                <div className="text-sm text-muted-foreground space-y-1">
-                  <p>• ICNA Relief</p>
-                  <p>• Lamps of Light</p>
-                  <p>• UC San Diego Student Organizations</p>
+                <div className="space-y-3">
+                  <div className="flex items-center space-x-3">
+                    <img src={icnaReliefLogo} alt="ICNA Relief" className="h-8 w-auto" />
+                    <span className="text-sm text-muted-foreground">ICNA Relief</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <img src={lampsOfLightLogo} alt="Lamps of Light" className="h-8 w-auto" />
+                    <span className="text-sm text-muted-foreground">Lamps of Light</span>
+                  </div>
+                  <p className="text-sm text-muted-foreground">• UC San Diego Student Organizations</p>
                 </div>
               </div>
             </div>
