@@ -60,37 +60,39 @@ const ImageCollage = () => {
   ];
 
   return (
-    <section id="collage" className="py-16 md:py-24">
-      <div className="max-w-7xl mx-auto px-6 md:px-8">
-        {/* Minimal grid layout */}
-        <div className="grid grid-cols-4 gap-2 md:gap-4 auto-rows-[250px] md:auto-rows-[350px]">
+    <section id="collage" className="py-8 md:py-16">
+      <div className="max-w-7xl mx-auto px-2 md:px-4">
+        {/* Tight grid layout with minimal gaps */}
+        <div className="grid grid-cols-4 gap-1 md:gap-2 auto-rows-[200px] md:auto-rows-[300px]">
           {images.map((image, index) => (
             <div
               key={index}
-              className={`${image.gridClass} group flex flex-col`}
+              className={`${image.gridClass} group relative overflow-hidden bg-background`}
             >
-              <div className="relative overflow-hidden bg-background transition-all duration-500 ease-out hover:scale-[1.01] flex-1 min-h-0">
+              <div className="absolute inset-0">
                 <img
                   src={image.src}
                   alt={image.alt}
-                  className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                  className="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
                 />
               </div>
               
-              {/* Clean typography below image */}
-              <div className="mt-3 space-y-2 flex-shrink-0">
-                <h3 className="text-foreground font-bold text-sm md:text-base">
-                  {image.title}
-                </h3>
-                <div className="flex flex-wrap gap-2">
-                  {image.tags.map((tag, tagIndex) => (
-                    <span
-                      key={tagIndex}
-                      className="text-muted-foreground text-xs font-medium"
-                    >
-                      {tag}
-                    </span>
-                  ))}
+              {/* Overlay with title on hover */}
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/70 transition-all duration-300 flex items-end p-3 md:p-4">
+                <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white">
+                  <h3 className="font-bold text-sm md:text-base mb-1">
+                    {image.title}
+                  </h3>
+                  <div className="flex flex-wrap gap-1">
+                    {image.tags.map((tag, tagIndex) => (
+                      <span
+                        key={tagIndex}
+                        className="text-white/70 text-xs"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
