@@ -1,39 +1,41 @@
 const Contact = () => {
   return (
-    <section id="contact" className="mws-section border-t border-border">
-      <div className="max-w-7xl mx-auto">
-        <div className="grid md:grid-cols-2 gap-16">
-          <div className="animate-fade-in">
-            <h2 className="text-2xl font-medium mb-8 transition-all duration-300 hover:opacity-80">Get Involved</h2>
-            <div className="space-y-6 text-lg">
-              <p className="transition-all duration-300 hover:transform hover:translate-x-2">
-                Interested in joining Alpha Lambda Mu or learning more about our brotherhood?
-              </p>
-              <p className="transition-all duration-300 hover:transform hover:translate-x-2">
-                We welcome Muslim men who are committed to excellence in faith, academics, and service.
-              </p>
-            </div>
+    <section id="contact" className="py-20 md:py-32 bg-background relative">
+      <div className="max-w-7xl mx-auto px-6">
+        {/* Header */}
+        <div className="mb-16">
+          <h2 className="text-4xl md:text-6xl font-bold text-foreground mb-6">
+            Get in touch
+          </h2>
+          <div className="space-y-2">
+            <a 
+              href="https://www.instagram.com/alm.at.ucsd/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block text-lg md:text-xl text-muted-foreground hover:text-foreground transition-colors"
+            >
+              @alm.at.ucsd
+            </a>
+            <p className="text-lg md:text-xl text-muted-foreground">
+              UC San Diego, La Jolla CA
+            </p>
           </div>
-          
-          <div className="animate-slide-in-from-bottom-2">
-            <h3 className="text-xl font-medium mb-6 transition-all duration-300 hover:opacity-80">Contact</h3>
-            <div className="space-y-4">
-              <div className="transition-all duration-300 hover:transform hover:scale-105 hover:bg-muted/10 p-4 rounded-md">
-                <p className="font-medium">Instagram</p>
-                <a 
-                  href="https://www.instagram.com/alm.at.ucsd/" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="nav-link text-muted-foreground"
-                >
-                  @alm.at.ucsd
-                </a>
-              </div>
-              <div className="transition-all duration-300 hover:transform hover:scale-105 hover:bg-muted/10 p-4 rounded-md">
-                <p className="font-medium">Location</p>
-                <p className="text-muted-foreground">UC San Diego<br />La Jolla, CA</p>
-              </div>
-            </div>
+        </div>
+
+        {/* Large Brand Text */}
+        <div className="relative overflow-hidden">
+          <div className="text-[12rem] md:text-[20rem] lg:text-[24rem] font-black leading-none text-foreground select-none">
+            ALM
+          </div>
+        </div>
+
+        {/* Footer Info */}
+        <div className="flex justify-between items-end mt-8 text-sm text-muted-foreground">
+          <div>©2024</div>
+          <div className="text-right">
+            <div>Alpha Lambda Mu</div>
+            <div>Muslim Fraternity</div>
+            <div>UC San Diego</div>
           </div>
         </div>
       </div>
