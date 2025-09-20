@@ -4,7 +4,6 @@ import ImageCollage from "@/components/ImageCollage";
 import About from "@/components/About";
 import Membership from "@/components/Membership";
 import Goals from "@/components/Goals";
-import Work from "@/components/Work";
 import Support from "@/components/Support";
 import Contact from "@/components/Contact";
 
@@ -17,7 +16,6 @@ const Index = () => {
       <About />
       <Membership />
       <Goals />
-      <Work />
       <Support />
       <Contact />
     </div>

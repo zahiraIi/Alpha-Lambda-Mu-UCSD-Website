@@ -80,16 +80,6 @@ const ImageCollage = () => {
             </div>
           ))}
         </div>
-
-        {/* Minimal call to action */}
-        <div className="text-center mt-24">
-          <a 
-            href="#membership"
-            className="inline-block text-foreground font-medium hover:text-muted-foreground transition-colors duration-300"
-          >
-            Learn About Membership →
-          </a>
-        </div>
       </div>
     </section>
   );
