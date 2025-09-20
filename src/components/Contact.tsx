@@ -22,12 +22,6 @@ const Contact = () => {
           </div>
         </div>
 
-        {/* Large Brand Text */}
-        <div className="relative overflow-hidden">
-          <div className="text-[12rem] md:text-[20rem] lg:text-[24rem] font-black leading-none text-foreground select-none">
-            ALM
-          </div>
-        </div>
 
         {/* Footer Info */}
         <div className="flex justify-between items-end mt-8 text-sm text-muted-foreground">
