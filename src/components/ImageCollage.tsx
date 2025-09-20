@@ -47,7 +47,7 @@ const ImageCollage = () => {
     <section id="collage" className="py-12 md:py-16">
       <div className="max-w-7xl mx-auto px-4 md:px-6">
         {/* Minimal grid layout */}
-        <div className="grid grid-cols-4 gap-4 md:gap-6 auto-rows-[200px] md:auto-rows-[280px]">
+        <div className="grid grid-cols-4 gap-1 md:gap-2 auto-rows-[200px] md:auto-rows-[280px]">
           {images.map((image, index) => (
             <div
               key={index}
