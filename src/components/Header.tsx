@@ -17,17 +17,17 @@ const Header = () => {
             </div>
           </div>
 
-          {/* Navigation - Mouthwash style */}
+          {/* Navigation - Premium Apple-like style */}
           <div className="hidden md:flex items-center space-x-8">
-            <a href="#about" className="minimal-hover">About</a>
-            <a href="#membership" className="minimal-hover">Membership</a>
-            <a href="#goals" className="minimal-hover">Goals</a>
-            <a href="#support" className="minimal-hover">Support</a>
+            <a href="#about" className="nav-link">About</a>
+            <a href="#membership" className="nav-link">Membership</a>
+            <a href="#goals" className="nav-link">Goals</a>
+            <a href="#support" className="nav-link">Support</a>
           </div>
 
           {/* Mobile menu button */}
           <div className="md:hidden">
-            <button className="text-foreground">Menu</button>
+            <button className="text-foreground transition-all duration-200 hover:scale-110 active:scale-95">Menu</button>
           </div>
         </div>
       </nav>

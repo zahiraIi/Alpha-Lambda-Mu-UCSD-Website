@@ -90,6 +90,14 @@ export default {
         "float": {
           "0%, 100%": { transform: "translateY(0)" },
           "50%": { transform: "translateY(-10px)" }
+        },
+        "shimmer": {
+          "0%": { transform: "translateX(-100%)" },
+          "100%": { transform: "translateX(100%)" }
+        },
+        "bounce-gentle": {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-5px)" }
         }
       },
       animation: {
@@ -100,7 +108,9 @@ export default {
         "slide-in-from-bottom-2": "slide-in-from-bottom 0.7s ease-out 0.2s both",
         "scale-in": "scale-in 0.4s ease-out",
         "float": "float 3s ease-in-out infinite",
-        "animate-in": "fade-in 0.6s ease-out"
+        "animate-in": "fade-in 0.6s ease-out",
+        "shimmer": "shimmer 2s ease-in-out infinite",
+        "bounce-gentle": "bounce-gentle 2s ease-in-out infinite"
       },
     },
   },
