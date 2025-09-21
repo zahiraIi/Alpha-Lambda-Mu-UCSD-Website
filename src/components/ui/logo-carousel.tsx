@@ -34,27 +34,28 @@ const distributeLogos = (allLogos: Logo[], columnCount: number): Logo[][] => {
   const shuffled = shuffleArray(allLogos)
   const columns: Logo[][] = Array.from({ length: columnCount }, () => [])
 
+  // Distribute logos evenly without duplicates
   shuffled.forEach((logo, index) => {
     columns[index % columnCount].push(logo)
   })
 
-  const maxLength = Math.max(...columns.map((col) => col.length))
-  columns.forEach((col) => {
-    while (col.length < maxLength) {
-      col.push(shuffled[Math.floor(Math.random() * shuffled.length)])
-    }
-  })
-
+  // Instead of adding duplicates, we'll cycle through existing logos
+  // This ensures no duplicates while maintaining smooth transitions
   return columns
 }
 
 const LogoColumn: React.FC<LogoColumnProps> = React.memo(
   ({ logos, index, currentTime }) => {
-    const cycleInterval = 2000
-    const columnDelay = index * 200
+    const cycleInterval = 3000 // Increased for better visibility
+    const columnDelay = index * 300
     const adjustedTime = (currentTime + columnDelay) % (cycleInterval * logos.length)
     const currentIndex = Math.floor(adjustedTime / cycleInterval)
-    const CurrentLogo = useMemo(() => logos[currentIndex].img, [logos, currentIndex])
+    const CurrentLogo = useMemo(() => logos[currentIndex]?.img, [logos, currentIndex])
+
+    // Don't render if no logo available
+    if (!CurrentLogo || !logos[currentIndex]) {
+      return null
+    }
 
     return (
       <motion.div
@@ -69,7 +70,7 @@ const LogoColumn: React.FC<LogoColumnProps> = React.memo(
       >
         <AnimatePresence mode="wait">
           <motion.div
-            key={`${logos[currentIndex].id}-${currentIndex}`}
+            key={`${logos[currentIndex].id}-${currentIndex}-${index}`}
             className="absolute inset-0 flex items-center justify-center"
             initial={{ y: "10%", opacity: 0, filter: "blur(8px)" }}
             animate={{
