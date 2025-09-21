@@ -169,11 +169,16 @@ export function FloatingActionPanelContent({
             ref={contentRef}
             layoutId={`floating-panel-${uniqueId}-${mode}`}
             className={cn(
-              "fixed z-50 min-w-[200px] overflow-hidden rounded-lg border border-zinc-200 bg-white shadow-lg outline-none dark:border-zinc-800 dark:bg-zinc-950",
+              "fixed z-50 min-w-[180px] max-w-[280px] overflow-hidden rounded-lg border border-border bg-background/95 backdrop-blur-md shadow-lg outline-none",
               className
             )}
             style={{
-              left: triggerRect ? triggerRect.left : "50%",
+              left: triggerRect ? 
+                // Check if dropdown would overflow right edge, if so position from right
+                (triggerRect.left + 200 > window.innerWidth 
+                  ? triggerRect.right - 180 
+                  : triggerRect.left) 
+                : "50%",
               top: triggerRect ? triggerRect.bottom + 8 : "50%",
               transformOrigin: "top left",
             }}
