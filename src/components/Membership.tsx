@@ -1,3 +1,5 @@
+import { SlidingNumber } from "@/components/ui/sliding-number";
+
 const Membership = () => {
   return (
     <section id="membership" className="mws-section">
@@ -27,16 +29,25 @@ const Membership = () => {
               <h3 className="text-xl font-medium mb-4">Growth Trajectory</h3>
               <div className="space-y-3">
                 <div className="flex justify-between border-b border-border pb-2">
-                  <span>2024</span>
-                  <span className="font-medium">13 Members</span>
+                  <span>2023</span>
+                  <div className="font-medium flex items-center gap-1">
+                    <SlidingNumber value={13} />
+                    <span>Members</span>
+                  </div>
                 </div>
                 <div className="flex justify-between border-b border-border pb-2">
-                  <span>2025</span>
-                  <span className="font-medium">31 Members</span>
+                  <span>2024</span>
+                  <div className="font-medium flex items-center gap-1">
+                    <SlidingNumber value={31} />
+                    <span>Members</span>
+                  </div>
                 </div>
                 <div className="flex justify-between">
-                  <span>2026</span>
-                  <span className="font-medium text-muted-foreground">50 Members (Projected)</span>
+                  <span>2025</span>
+                  <div className="font-medium flex items-center gap-1">
+                    <SlidingNumber value={43} />
+                    <span>Members</span>
+                  </div>
                 </div>
               </div>
               <p className="text-sm text-muted-foreground mt-4 leading-relaxed">
