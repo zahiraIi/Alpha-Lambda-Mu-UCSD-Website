@@ -1,30 +1,30 @@
 import heroImage from "@/assets/alm-hero-fraternity.png";
+import heroBackground from "@/assets/alm-hero-mouthwash.jpg";
+import ScrollExpandMedia from "@/components/ui/scroll-expansion-hero";
+import ImageCollage from "./ImageCollage";
 
 const Hero = () => {
   return (
-    <main className="pt-20">
-      {/* Main image section - Premium animated style */}
-      <section className="mws-section flex justify-center">
-        <div className="max-w-4xl w-full animate-fade-in">
-          <div className="mws-frame max-w-2xl mx-auto">
-            <img 
-              src={heroImage} 
-              alt="Alpha Lambda Mu Brotherhood"
-              className="w-full h-auto transition-all duration-700 ease-out hover:scale-105"
-            />
-          </div>
-        </div>
-      </section>
-
-      {/* Large text section */}
-      <section className="mws-section">
-        <div className="max-w-7xl mx-auto">
-          <h1 className="mws-large-text">
-            Alpha Lambda Mu is the nation's first Muslim-interest fraternity centered on building Muslim men through
-          </h1>
-        </div>
-      </section>
-    </main>
+    <ScrollExpandMedia
+      mediaType="image"
+      mediaSrc={heroImage}
+      bgImageSrc={heroBackground}
+      title="Alpha Lambda Mu Brotherhood"
+      date="Est. 2009"
+      scrollToExpand="Scroll to explore our journey"
+      textBlend={true}
+    >
+      <div className="max-w-7xl mx-auto text-center">
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-8 text-foreground">
+          Building Muslim Men Through Brotherhood
+        </h2>
+        <p className="text-lg md:text-xl text-muted-foreground mb-12 max-w-4xl mx-auto">
+          Alpha Lambda Mu is the nation's first Muslim-interest fraternity, dedicated to fostering leadership, 
+          academic excellence, and community service among Muslim men in higher education.
+        </p>
+        <ImageCollage />
+      </div>
+    </ScrollExpandMedia>
   );
 };
 
