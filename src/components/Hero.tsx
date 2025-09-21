@@ -11,7 +11,7 @@ const Hero = () => {
       mediaSrc={groupPhoto}
       bgImageSrc=""
       title="Alpha Lambda Mu"
-      date="@ UCSD Est. 2013"
+      date="@ UCSD Est. 2014"
       scrollToExpand=""
       textBlend={false}
     >

@@ -31,10 +31,6 @@ const Membership = () => {
                 <h3 className="text-xl font-medium mb-4">Growth Trajectory</h3>
                 <div className="space-y-3">
                   <div className="flex justify-between border-b border-border pb-2">
-                    <span>2023</span>
-                    <span className="font-medium">Foundation Year</span>
-                  </div>
-                  <div className="flex justify-between border-b border-border pb-2">
                     <span>2024</span>
                     <span className="font-medium">Steady Growth</span>
                   </div>
