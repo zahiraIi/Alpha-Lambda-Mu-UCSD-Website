@@ -1,5 +1,6 @@
 import heroImage from "@/assets/alm-hero-fraternity.png";
 import heroBackground from "@/assets/alm-hero-mouthwash.jpg";
+import groupPhoto from "@/assets/alm-group-photo.png";
 import ScrollExpandMedia from "@/components/ui/scroll-expansion-hero";
 import ImageCollage from "./ImageCollage";
 
@@ -7,7 +8,7 @@ const Hero = () => {
   return (
     <ScrollExpandMedia
       mediaType="image"
-      mediaSrc={heroBackground}
+      mediaSrc={groupPhoto}
       bgImageSrc=""
       title="Alpha Lambda Mu"
       date="@ UCSD Est. 2013"
