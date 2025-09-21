@@ -9,8 +9,8 @@ const Hero = () => {
       mediaType="image"
       mediaSrc={heroBackground}
       bgImageSrc={heroImage}
-      title="Alpha Lambda Mu Brotherhood"
-      date="Est. 2009"
+      title="Alpha Lambda Mu"
+      date="@ UCSD Est. 2013"
       scrollToExpand="Scroll to explore our journey"
       textBlend={true}
     >
