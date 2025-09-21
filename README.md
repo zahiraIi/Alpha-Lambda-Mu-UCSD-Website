@@ -1,8 +1,6 @@
-## Alpha Lambda Mu @ UCSD Website 2025 Version 1.0
+## Alpha Lambda Mu @ UCSD Website 2025 
 
-## How can I edit this website?
-
-There are several ways of editing your application.
+## How can I update the website?
 
 **Use Lovable**
 
