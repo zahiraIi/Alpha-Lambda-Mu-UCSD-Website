@@ -1,3 +1,13 @@
+import { SocialLinks } from "@/components/ui/social-links";
+
+const socials = [
+  {
+    name: "Instagram",
+    image: "https://link-hover-lndev.vercel.app/instagram.png",
+    url: "https://www.instagram.com/alm.at.ucsd/"
+  }
+];
+
 const Contact = () => {
   return (
     <section id="contact" className="py-20 md:py-32 bg-background relative">
@@ -7,15 +17,9 @@ const Contact = () => {
           <h2 className="text-4xl md:text-6xl font-bold text-foreground mb-6">
             Get in touch
           </h2>
-          <div className="space-y-2">
-            <a 
-              href="https://www.instagram.com/alm.at.ucsd/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block text-lg md:text-xl text-muted-foreground hover:text-foreground transition-colors"
-            >
-              @alm.at.ucsd
-            </a>
+          <div className="flex items-center gap-4 mt-6">
+            <span className="text-lg md:text-xl text-muted-foreground">Follow us:</span>
+            <SocialLinks socials={socials} />
           </div>
         </div>
 
