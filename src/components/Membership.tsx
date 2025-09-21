@@ -1,5 +1,6 @@
 import icnaReliefLogo from "@/assets/icna-relief-logo.png";
 import lampsOfLightLogo from "@/assets/lamps-of-light-logo.png";
+import ucsdCSILogo from "@/assets/ucsd-csi-logo.png";
 
 const Membership = () => {
   return (
@@ -57,7 +58,9 @@ const Membership = () => {
                   <div className="flex items-center space-x-3">
                     <img src={lampsOfLightLogo} alt="Lamps of Light" className="h-8 w-auto" />
                   </div>
-                  <p className="text-sm text-muted-foreground">• UC San Diego Student Organizations</p>
+                  <div className="flex items-center space-x-3">
+                    <img src={ucsdCSILogo} alt="UCSD Center for Student Involvement" className="h-8 w-auto" />
+                  </div>
                 </div>
               </div>
             </div>
