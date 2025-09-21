@@ -34,46 +34,27 @@ const distributeLogos = (allLogos: Logo[], columnCount: number): Logo[][] => {
   const shuffled = shuffleArray(allLogos)
   const columns: Logo[][] = Array.from({ length: columnCount }, () => [])
 
-  // Create multiple unique sequences for each column to ensure variety
-  const createUniqueSequence = (logos: Logo[], sequenceLength: number) => {
-    const sequence = []
-    const available = [...logos]
-    
-    for (let i = 0; i < sequenceLength; i++) {
-      if (available.length === 0) {
-        // Reshuffle when we run out, ensuring no immediate repeats
-        available.push(...shuffleArray(logos))
-      }
-      const randomIndex = Math.floor(Math.random() * available.length)
-      sequence.push(available.splice(randomIndex, 1)[0])
-    }
-    return sequence
-  }
+  shuffled.forEach((logo, index) => {
+    columns[index % columnCount].push(logo)
+  })
 
-  // Create longer sequences for each column to ensure variety
-  const sequenceLength = Math.max(6, allLogos.length * 2)
-  for (let i = 0; i < columnCount; i++) {
-    columns[i] = createUniqueSequence(shuffled, sequenceLength)
-  }
+  const maxLength = Math.max(...columns.map((col) => col.length))
+  columns.forEach((col) => {
+    while (col.length < maxLength) {
+      col.push(shuffled[Math.floor(Math.random() * shuffled.length)])
+    }
+  })
 
   return columns
 }
 
 const LogoColumn: React.FC<LogoColumnProps> = React.memo(
   ({ logos, index, currentTime }) => {
-    // Add some randomness to timing to prevent predictable patterns
-    const baseInterval = 3000
-    const randomOffset = useMemo(() => Math.random() * 500 + 250, []) // 250-750ms offset
-    const cycleInterval = baseInterval + randomOffset
-    const columnDelay = index * 300 + Math.random() * 200 // Add random delay
+    const cycleInterval = 2000
+    const columnDelay = index * 200
     const adjustedTime = (currentTime + columnDelay) % (cycleInterval * logos.length)
     const currentIndex = Math.floor(adjustedTime / cycleInterval)
-    const CurrentLogo = useMemo(() => logos[currentIndex]?.img, [logos, currentIndex])
-
-    // Don't render if no logo available
-    if (!CurrentLogo || !logos[currentIndex]) {
-      return null
-    }
+    const CurrentLogo = useMemo(() => logos[currentIndex].img, [logos, currentIndex])
 
     return (
       <motion.div
@@ -88,7 +69,7 @@ const LogoColumn: React.FC<LogoColumnProps> = React.memo(
       >
         <AnimatePresence mode="wait">
           <motion.div
-            key={`${logos[currentIndex].id}-${currentIndex}-${index}-${Math.floor(currentTime / 15000)}`}
+            key={`${logos[currentIndex].id}-${currentIndex}`}
             className="absolute inset-0 flex items-center justify-center"
             initial={{ y: "10%", opacity: 0, filter: "blur(8px)" }}
             animate={{
@@ -131,7 +112,6 @@ interface LogoCarouselProps {
 export function LogoCarousel({ columnCount = 2, logos }: LogoCarouselProps) {
   const [logoSets, setLogoSets] = useState<Logo[][]>([])
   const [currentTime, setCurrentTime] = useState(0)
-  const [reshuffleKey, setReshuffleKey] = useState(0)
 
   const updateTime = useCallback(() => {
     setCurrentTime((prevTime) => prevTime + 100)
@@ -142,25 +122,16 @@ export function LogoCarousel({ columnCount = 2, logos }: LogoCarouselProps) {
     return () => clearInterval(intervalId)
   }, [updateTime])
 
-  // Reshuffle logos periodically to ensure variety
-  useEffect(() => {
-    const reshuffleInterval = setInterval(() => {
-      setReshuffleKey(prev => prev + 1)
-    }, 15000) // Reshuffle every 15 seconds
-    
-    return () => clearInterval(reshuffleInterval)
-  }, [])
-
   useEffect(() => {
     const distributedLogos = distributeLogos(logos, columnCount)
     setLogoSets(distributedLogos)
-  }, [logos, columnCount, reshuffleKey])
+  }, [logos, columnCount])
 
   return (
     <div className="flex space-x-4">
       {logoSets.map((logos, index) => (
         <LogoColumn
-          key={`${index}-${reshuffleKey}`}
+          key={index}
           logos={logos}
           index={index}
           currentTime={currentTime}

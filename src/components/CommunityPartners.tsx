@@ -63,7 +63,7 @@ const CommunityPartners = () => {
         </div>
         
         <div className="flex justify-center">
-          <LogoCarousel columnCount={2} logos={partnerLogos} />
+          <LogoCarousel columnCount={3} logos={partnerLogos} />
         </div>
       </div>
     </section>
