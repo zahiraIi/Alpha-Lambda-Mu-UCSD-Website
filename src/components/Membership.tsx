@@ -42,11 +42,18 @@ const Membership = () => {
                     <span>Members</span>
                   </div>
                 </div>
-                <div className="flex justify-between">
+                <div className="flex justify-between border-b border-border pb-2">
                   <span>2025</span>
                   <div className="font-medium flex items-center gap-1">
                     <AnimatedCounter value={43} />
                     <span>Members</span>
+                  </div>
+                </div>
+                <div className="flex justify-between">
+                  <span>2026</span>
+                  <div className="font-medium text-muted-foreground flex items-center gap-1">
+                    <AnimatedCounter value={50} />
+                    <span>Members (Projected)</span>
                   </div>
                 </div>
               </div>
