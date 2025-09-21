@@ -32,17 +32,20 @@ const Membership = () => {
                 <div className="space-y-3">
                   <div className="flex justify-between border-b border-border pb-2">
                     <span>2024</span>
-                    <span className="font-medium">Steady Growth</span>
+                    <span className="font-medium">13 Members</span>
                   </div>
                   <div className="flex justify-between border-b border-border pb-2">
                     <span>2025</span>
-                    <span className="font-medium">Expanding Impact</span>
+                    <span className="font-medium">31 Members</span>
                   </div>
                   <div className="flex justify-between">
                     <span>2026</span>
-                    <span className="font-medium text-muted-foreground">Projected Excellence</span>
+                    <span className="font-medium text-muted-foreground">50 Members (Projected)</span>
                   </div>
                 </div>
+                <p className="text-sm text-muted-foreground mt-4 leading-relaxed">
+                  We have expanded our members and thus our reach without sacrificing the quality of members we select and mentorship we provide to our growing brotherhood.
+                </p>
               </div>
               
               <div>
