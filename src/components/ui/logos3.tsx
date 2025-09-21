@@ -54,7 +54,7 @@ const Logos3 = ({
           {heading}
         </h1>
       </div>
-      <div className="pt-10 md:pt-16 lg:pt-20">
+      <div className="pt-4 md:pt-6 lg:pt-8">
         <div className="relative mx-auto flex items-center justify-center lg:max-w-5xl">
           <Carousel
             opts={{ 
@@ -76,16 +76,14 @@ const Logos3 = ({
               {duplicatedLogos.map((logo, index) => (
                 <CarouselItem
                   key={`${logo.id}-${index}`}
-                  className="flex basis-auto justify-center pl-0 md:basis-1/4 lg:basis-1/6"
+                  className="flex basis-1/3 justify-center pl-6 md:basis-1/4 lg:basis-1/6"
                 >
-                  <div className="mx-8 flex shrink-0 items-center justify-center">
-                    <div>
-                      <img
-                        src={logo.image}
-                        alt={logo.description}
-                        className={logo.className}
-                      />
-                    </div>
+                  <div className="flex shrink-0 items-center justify-center min-w-0 w-full">
+                    <img
+                      src={logo.image}
+                      alt={logo.description}
+                      className={logo.className}
+                    />
                   </div>
                 </CarouselItem>
               ))}
