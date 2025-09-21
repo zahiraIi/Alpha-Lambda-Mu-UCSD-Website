@@ -7,8 +7,8 @@ const Hero = () => {
   return (
     <ScrollExpandMedia
       mediaType="image"
-      mediaSrc={heroImage}
-      bgImageSrc={heroBackground}
+      mediaSrc={heroBackground}
+      bgImageSrc={heroImage}
       title="Alpha Lambda Mu Brotherhood"
       date="Est. 2009"
       scrollToExpand="Scroll to explore our journey"
