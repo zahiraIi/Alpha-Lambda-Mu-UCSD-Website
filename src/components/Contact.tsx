@@ -20,8 +20,7 @@ const Contact = () => {
           <h2 className="text-4xl md:text-6xl font-bold text-foreground mb-6">
             Get in touch
           </h2>
-          <div className="flex items-center gap-4 mt-6">
-            <span className="text-lg md:text-xl text-muted-foreground">Follow us:</span>
+          <div className="flex items-center justify-center mt-12">
             <SocialLinks socials={socials} />
           </div>
         </div>
