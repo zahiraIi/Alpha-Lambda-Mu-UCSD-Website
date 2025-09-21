@@ -60,34 +60,10 @@ const CommunityPartners = () => {
           <GradientHeading variant="default" size="lg">
             Community Partners
           </GradientHeading>
-          <p className="text-lg text-muted-foreground mt-4 max-w-3xl mx-auto">
-            Alpha Lambda Mu collaborates with various organizations to strengthen our impact 
-            and build meaningful connections within the broader community.
-          </p>
         </div>
         
         <div className="flex justify-center">
           <LogoCarousel columnCount={2} logos={partnerLogos} />
-        </div>
-        
-        <div className="mt-16 grid md:grid-cols-2 gap-8">
-          <div className="mws-frame">
-            <h3 className="text-xl font-medium mb-4">Strategic Partnerships</h3>
-            <p className="text-muted-foreground leading-relaxed">
-              Our partnerships enable us to amplify our community service efforts, provide 
-              resources for our members' personal and professional development, and create 
-              lasting positive impact both on campus and beyond.
-            </p>
-          </div>
-          
-          <div className="mws-frame">
-            <h3 className="text-xl font-medium mb-4">Collaborative Impact</h3>
-            <p className="text-muted-foreground leading-relaxed">
-              Through these partnerships, we've been able to organize larger charity drives, 
-              host interfaith dialogue events, and provide mentorship opportunities that 
-              benefit not only our brotherhood but the entire UCSD community.
-            </p>
-          </div>
         </div>
       </div>
     </section>
