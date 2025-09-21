@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 
 interface SlidingCounterProps {
@@ -8,32 +8,51 @@ interface SlidingCounterProps {
 
 export function SlidingCounter({ value, duration = 2000 }: SlidingCounterProps) {
   const [currentValue, setCurrentValue] = useState(0);
+  const [isVisible, setIsVisible] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setCurrentValue(value);
-    }, 100);
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !isVisible) {
+          setIsVisible(true);
+          const timer = setTimeout(() => {
+            setCurrentValue(value);
+          }, 200);
+          return () => clearTimeout(timer);
+        }
+      },
+      { threshold: 0.5 }
+    );
 
-    return () => clearTimeout(timer);
-  }, [value]);
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => {
+      if (ref.current) {
+        observer.unobserve(ref.current);
+      }
+    };
+  }, [value, isVisible]);
 
   const digits = currentValue.toString().split('');
 
   return (
-    <div className="flex">
+    <div ref={ref} className="flex">
       {digits.map((digit, index) => (
         <div key={index} className="relative w-[0.6em] overflow-hidden">
           <motion.div
             key={`${index}-${digit}`}
             className="flex flex-col items-center"
             initial={{ y: 20, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
+            animate={isVisible ? { y: 0, opacity: 1 } : { y: 20, opacity: 0 }}
             transition={{
-              duration: 0.5,
-              delay: index * 0.1,
+              duration: 0.6,
+              delay: index * 0.15,
               type: "spring",
-              stiffness: 100,
-              damping: 15
+              stiffness: 120,
+              damping: 20
             }}
           >
             {digit}
