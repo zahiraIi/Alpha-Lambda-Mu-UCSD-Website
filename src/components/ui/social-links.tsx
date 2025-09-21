@@ -7,6 +7,7 @@ import { cn } from "@/lib/utils"
 interface Social {
   name: string
   image: string
+  url: string
 }
 
 interface SocialLinksProps extends React.HTMLAttributes<HTMLDivElement> {
@@ -55,6 +56,7 @@ export function SocialLinks({ socials, className, ...props }: SocialLinksProps) 
           onMouseLeave={() => setHoveredSocial(null)}
           onClick={() => {
             setClicked(true)
+            window.open(social.url, '_blank', 'noopener,noreferrer')
           }}
         >
           <span className="block text-lg font-medium">{social.name}</span>

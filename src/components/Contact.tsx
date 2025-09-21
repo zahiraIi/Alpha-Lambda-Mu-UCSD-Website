@@ -4,10 +4,12 @@ const socials = [
   {
     name: "Instagram",
     image: "https://link-hover-lndev.vercel.app/instagram.png",
+    url: "https://www.instagram.com/alm.at.ucsd/",
   },
   {
     name: "LinkedIn",
     image: "https://link-hover-lndev.vercel.app/linkedin.png",
+    url: "https://www.linkedin.com/search/results/all/?fetchDeterministicClustersOnly=true&heroEntityKey=urn%3Ali%3Aorganization%3A108100064&keywords=alpha%20lambda%20mu%20%40%20uc%20san%20diego&origin=RICH_QUERY_TYPEAHEAD_HISTORY&position=0&searchId=1d36d431-8fe4-41a6-9dc1-d0bed1b951bf&sid=wqe&spellCorrectionEnabled=true",
   }
 ];
 
