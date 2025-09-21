@@ -8,11 +8,11 @@ const Hero = () => {
     <ScrollExpandMedia
       mediaType="image"
       mediaSrc={heroBackground}
-      bgImageSrc={heroImage}
+      bgImageSrc=""
       title="Alpha Lambda Mu"
       date="@ UCSD Est. 2013"
       scrollToExpand="Scroll to explore our journey"
-      textBlend={true}
+      textBlend={false}
     >
       <div className="max-w-7xl mx-auto text-center">
         <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-8 text-foreground">
