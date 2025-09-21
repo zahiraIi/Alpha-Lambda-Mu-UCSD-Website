@@ -1,8 +1,25 @@
+import { useState, useEffect } from "react";
 import almLogo from "@/assets/alm-logo.png";
 
 const Header = () => {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // Show navbar when user scrolls past the hero section (viewport height)
+      const scrollY = window.scrollY;
+      const shouldShow = scrollY > window.innerHeight * 0.8;
+      setIsVisible(shouldShow);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md">
+    <header className={`fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md transition-transform duration-300 ease-in-out ${
+      isVisible ? 'translate-y-0' : '-translate-y-full'
+    }`}>
       <nav className="max-w-7xl mx-auto px-8 py-6">
         <div className="flex items-center justify-between">
           {/* Logo - Mouthwash style */}
