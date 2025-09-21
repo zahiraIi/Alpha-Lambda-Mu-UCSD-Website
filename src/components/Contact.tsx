@@ -4,12 +4,10 @@ const socials = [
   {
     name: "Instagram",
     image: "https://link-hover-lndev.vercel.app/instagram.png",
-    url: "https://www.instagram.com/alm.at.ucsd/"
   },
   {
     name: "LinkedIn",
     image: "https://link-hover-lndev.vercel.app/linkedin.png",
-    url: "https://www.linkedin.com/company/alpha-lambda-mu-uc-san-diego/posts/?feedView=all"
   }
 ];
 
