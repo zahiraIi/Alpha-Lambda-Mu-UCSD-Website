@@ -1,4 +1,4 @@
-import { SlidingNumber } from "@/components/ui/sliding-number";
+import { AnimatedCounter } from "@/components/ui/animated-counter";
 
 const Membership = () => {
   return (
@@ -31,21 +31,21 @@ const Membership = () => {
                 <div className="flex justify-between border-b border-border pb-2">
                   <span>2023</span>
                   <div className="font-medium flex items-center gap-1">
-                    <SlidingNumber value={13} />
+                    <AnimatedCounter value={13} />
                     <span>Members</span>
                   </div>
                 </div>
                 <div className="flex justify-between border-b border-border pb-2">
                   <span>2024</span>
                   <div className="font-medium flex items-center gap-1">
-                    <SlidingNumber value={31} />
+                    <AnimatedCounter value={31} />
                     <span>Members</span>
                   </div>
                 </div>
                 <div className="flex justify-between">
                   <span>2025</span>
                   <div className="font-medium flex items-center gap-1">
-                    <SlidingNumber value={43} />
+                    <AnimatedCounter value={43} />
                     <span>Members</span>
                   </div>
                 </div>
