@@ -1,7 +1,3 @@
-import icnaReliefLogo from "@/assets/icna-relief-logo.png";
-import lampsOfLightLogo from "@/assets/lamps-of-light-logo.png";
-import ucsdCSILogo from "@/assets/ucsd-csi-logo.png";
-
 const Membership = () => {
   return (
     <section id="membership" className="mws-section">
@@ -27,42 +23,25 @@ const Membership = () => {
           </div>
           
           <div className="mws-frame">
-            <div className="space-y-8">
-              <div>
-                <h3 className="text-xl font-medium mb-4">Growth Trajectory</h3>
-                <div className="space-y-3">
-                  <div className="flex justify-between border-b border-border pb-2">
-                    <span>2024</span>
-                    <span className="font-medium">13 Members</span>
-                  </div>
-                  <div className="flex justify-between border-b border-border pb-2">
-                    <span>2025</span>
-                    <span className="font-medium">31 Members</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span>2026</span>
-                    <span className="font-medium text-muted-foreground">50 Members (Projected)</span>
-                  </div>
+            <div>
+              <h3 className="text-xl font-medium mb-4">Growth Trajectory</h3>
+              <div className="space-y-3">
+                <div className="flex justify-between border-b border-border pb-2">
+                  <span>2024</span>
+                  <span className="font-medium">13 Members</span>
                 </div>
-                <p className="text-sm text-muted-foreground mt-4 leading-relaxed">
-                  We have expanded our members and thus our reach without sacrificing the quality of members we select and mentorship we provide to our growing brotherhood.
-                </p>
-              </div>
-              
-              <div>
-                <h4 className="font-medium mb-3">Community Partners</h4>
-                <div className="space-y-3">
-                  <div className="flex items-center space-x-3">
-                    <img src={icnaReliefLogo} alt="ICNA Relief" className="h-8 w-auto" />
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <img src={lampsOfLightLogo} alt="Lamps of Light" className="h-8 w-auto" />
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <img src={ucsdCSILogo} alt="UCSD Center for Student Involvement" className="h-8 w-auto" />
-                  </div>
+                <div className="flex justify-between border-b border-border pb-2">
+                  <span>2025</span>
+                  <span className="font-medium">31 Members</span>
+                </div>
+                <div className="flex justify-between">
+                  <span>2026</span>
+                  <span className="font-medium text-muted-foreground">50 Members (Projected)</span>
                 </div>
               </div>
+              <p className="text-sm text-muted-foreground mt-4 leading-relaxed">
+                We have expanded our members and thus our reach without sacrificing the quality of members we select and mentorship we provide to our growing brotherhood.
+              </p>
             </div>
           </div>
         </div>
