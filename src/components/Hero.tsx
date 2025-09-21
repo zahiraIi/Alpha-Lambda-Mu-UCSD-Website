@@ -12,7 +12,7 @@ const Hero = () => {
       bgImageSrc=""
       title="Alpha Lambda Mu"
       date="@ UCSD Est. 2013"
-      scrollToExpand="Scroll to explore our journey"
+      scrollToExpand=""
       textBlend={false}
     >
       <div className="max-w-7xl mx-auto text-center">
