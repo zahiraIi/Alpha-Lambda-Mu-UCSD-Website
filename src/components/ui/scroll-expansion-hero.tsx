@@ -197,7 +197,7 @@ const ScrollExpandMedia = ({
           <div className='container mx-auto flex flex-col items-center justify-start relative z-10'>
             <div className='flex flex-col items-center justify-center w-full h-[100dvh] relative'>
               <div
-                className='absolute z-0 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 transition-none rounded-2xl'
+                className='absolute z-0 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 transition-none'
                 style={{
                   width: `${mediaWidth}px`,
                   height: `${mediaHeight}px`,
@@ -210,11 +210,11 @@ const ScrollExpandMedia = ({
                   <img
                     src={mediaSrc}
                     alt={title || 'Media content'}
-                    className='w-full h-full object-cover rounded-xl'
+                    className='w-full h-full object-cover'
                   />
 
                   <motion.div
-                    className='absolute inset-0 bg-black/50 rounded-xl'
+                    className='absolute inset-0 bg-black/50'
                     initial={{ opacity: 0.7 }}
                     animate={{ opacity: 0.7 - scrollProgress * 0.3 }}
                     transition={{ duration: 0.2 }}
@@ -247,13 +247,13 @@ const ScrollExpandMedia = ({
                 }`}
               >
                 <motion.h2
-                  className='text-4xl md:text-5xl lg:text-6xl font-bold text-alm-red transition-none'
+                  className='text-5xl md:text-6xl lg:text-7xl font-bold text-alm-red transition-none'
                   style={{ transform: `translateX(-${textTranslateX}vw)` }}
                 >
                   {firstWord}
                 </motion.h2>
                 <motion.h2
-                  className='text-4xl md:text-5xl lg:text-6xl font-bold text-center text-alm-red transition-none'
+                  className='text-5xl md:text-6xl lg:text-7xl font-bold text-center text-alm-red transition-none'
                   style={{ transform: `translateX(${textTranslateX}vw)` }}
                 >
                   {restOfTitle}

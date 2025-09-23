@@ -1,6 +1,76 @@
+/* 1) Font faces */
+@font-face {
+  font-family: "Minion Pro";
+  src: url("/fonts/MinionPro Font/MinionPro-Regular.ttf") format("truetype"),
+       url("/fonts/MinionPro Font/Minion Pro.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Minion Pro";
+  src: url("/fonts/MinionPro Font/MinionPro-Medium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Minion Pro";
+  src: url("/fonts/MinionPro Font/MinionPro-Bold.ttf") format("truetype"),
+       url("/fonts/MinionPro Font/Minion Pro Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Minion Pro";
+  src: url("/fonts/MinionPro Font/MinionPro-It.ttf") format("truetype"),
+       url("/fonts/MinionPro Font/Minion Pro Italic.ttf") format("truetype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Minion Pro";
+  src: url("/fonts/MinionPro Font/MinionPro-BoldIt.ttf") format("truetype"),
+       url("/fonts/MinionPro Font/Minion Pro Bold Italic.ttf") format("truetype");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Optional niceties */
+:root {
+  --font-sans: "Arial"
+}
+
+html {
+  font-synthesis-weight: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 2) Tailwind layers */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* 3) Make body use the sans stack */
+@layer base {
+  body {
+    @apply font-sans bg-background text-foreground font-bold;
+    line-height: 1.5;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    line-height: 1.2;
+  }
+}
 
 /* Mouthwash Studio Aesthetic - Ultra Minimal Design System */
 
@@ -73,28 +143,6 @@
   }
 }
 
-@layer base {
-  * {
-    @apply border-border;
-  }
-
-  html {
-    scroll-behavior: smooth;
-  }
-
-  body {
-    @apply bg-background text-foreground font-bold;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    line-height: 1.5;
-  }
-  
-  h1, h2, h3, h4, h5, h6 {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-weight: 700;
-    line-height: 1.2;
-  }
-}
-
 @layer components {
   /* Premium Apple-like hover effects */
   .minimal-hover {
@@ -142,4 +190,159 @@
   .premium-button {
     @apply transition-all duration-300 ease-out hover:shadow-lg hover:scale-105 active:scale-95;
   }
+/* FINAL OVERRIDE: Force Proxima Nova on ALL elements */
+html, html body, html body *,
+html body div, html body span, html body p, html body h1, html body h2, html body h3, html body h4, html body h5, html body h6,
+html body a, html body button, html body input, html body textarea, html body select, html body label {
+  font-family: "Proxima Nova" !important;
 }
+
+/* Override any component-specific font declarations */
+[class*=""] {
+  font-family: "Proxima Nova" !important;
+}
+
+/* Override Tailwind utilities with highest specificity */
+body .font-sans, body .font-serif, body .font-mono,
+body .font-medium, body .font-bold, body .font-semibold {
+  font-family: "Proxima Nova" !important;
+}
+}
+
+/* NUCLEAR OPTION: Force Minion Pro on EVERYTHING */
+* {
+  font-family: "Minion Pro", serif !important;
+}
+
+html *, body *, div *, section *, article *, p *, h1 *, h2 *, h3 *, h4 *, h5 *, h6 *, span *, a *, button * {
+  font-family: "Minion Pro", serif !important;
+}
+
+/* Force Minion Pro on Framer Motion elements and animation classes */
+[class*="motion-"], 
+div[style*="transform"], 
+section[style*="transform"],
+div[class*="animate-"],
+div[class*="transition-"],
+.animate-fade-in,
+.animate-slide-in-from-bottom,
+.animate-slide-in-from-bottom-2 {
+  font-family: "Minion Pro", serif !important;
+}
+
+/* Target all children of animated elements */
+.animate-fade-in *,
+.animate-slide-in-from-bottom *,
+.animate-slide-in-from-bottom-2 *,
+.mws-section * {
+  font-family: "Minion Pro", serif !important;
+}
+
+/* Target Framer Motion specific elements */
+[data-framer-name] *,
+[data-framer-component-type] *,
+motion-div,
+motion-span,
+motion-section {
+  font-family: ProximaNova, sans-serif !important;
+}
+
+/* Target specific text size classes that might be escaping */
+.text-sm,
+.text-xs,
+.text-lg,
+.text-xl,
+.text-2xl,
+.text-3xl,
+.text-4xl,
+.text-5xl,
+.text-6xl {
+  font-family: ProximaNova, sans-serif !important;
+}
+
+.text-sm *,
+.text-xs *,
+.text-lg *,
+.text-xl *,
+.text-2xl *,
+.text-3xl *,
+.text-4xl *,
+.text-5xl *,
+.text-6xl * {
+  font-family: ProximaNova, sans-serif !important;
+}
+
+/* Target muted text that might be escaping */
+.text-muted-foreground,
+.text-muted-foreground *,
+.font-medium,
+.font-medium * {
+  font-family: ProximaNova, sans-serif !important;
+}
+
+/* Target the specific sliding counter and framer motion components */
+.relative.inline-block,
+.relative.w-\\[0\\.6em\\],
+.relative.w-\\[1ch\\],
+.absolute.inset-0,
+.flex.flex-col.items-center {
+  font-family: ProximaNova, sans-serif !important;
+}
+
+/* Extremely specific targeting for stubborn elements */
+div[style*="transform"] *,
+span[style*="transform"] *,
+div[class*="motion"] *,
+span[class*="motion"] * {
+  font-family: ProximaNova, sans-serif !important;
+}
+
+/* Target tabular-nums class specifically (used in sliding numbers) */
+.tabular-nums,
+.tabular-nums *,
+.leading-none,
+.leading-none * {
+  font-family: ProximaNova, sans-serif !important;
+}
+
+/* Ultra-specific targeting for remaining small text elements */
+.text-muted-foreground,
+.text-gray-500,
+.text-gray-600,
+.text-gray-700,
+.text-slate-500,
+.text-slate-600,
+[class*="text-gray"],
+[class*="text-slate"],
+[class*="text-muted"] {
+  font-family: "Minion Pro", serif !important;
+}
+
+/* Target elements with specific opacity or color that might be small text */
+[style*="opacity"],
+[class*="opacity-"],
+.opacity-50,
+.opacity-60,
+.opacity-70,
+.opacity-80,
+.opacity-90 {
+  font-family: "Minion Pro", serif !important;
+}
+
+/* Force font on any remaining inline styles */
+[style*="color: rgb"],
+[style*="color: #"],
+[style*="color:rgb"],
+[style*="color:#"] {
+  font-family: "Minion Pro", serif !important;
+}
+
+/* Target all paragraphs and their children specifically */
+p, p *, 
+span, span *,
+div p, div p *,
+section p, section p *,
+article p, article p * {
+  font-family: "Minion Pro", serif !important;
+}
+

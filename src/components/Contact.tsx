@@ -33,7 +33,6 @@ const Contact = () => {
           <div>©2025</div>
           <div className="text-right">
             <div>Alpha Lambda Mu</div>
-            <div>Muslim Fraternity</div>
             <div>UC San Diego</div>
           </div>
         </div>

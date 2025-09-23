@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import defaultTheme from "tailwindcss/defaultTheme";
 
 export default {
   darkMode: ["class"],
@@ -14,7 +15,10 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ['"Helvetica Neue"', 'Helvetica', 'Arial', 'sans-serif'],
+        // Map all families to only Minion Pro
+        sans: ["Minion Pro"],
+        serif: ["Minion Pro"],
+        mono: ["Minion Pro"],
       },
       colors: {
         border: "hsl(var(--border))",

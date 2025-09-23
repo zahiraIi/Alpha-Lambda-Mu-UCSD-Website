@@ -7,6 +7,12 @@
     <meta name="description" content="Alpha Lambda Mu at UC San Diego - The nation's first Muslim-interest fraternity. Building Muslim men through faith, service, and brotherhood.">
     <meta name="author" content="Alpha Lambda Mu UCSD" />
     
+    <!-- Local Proxima Nova fonts -->
+    
+    <!-- Preload critical Minion Pro weights -->
+    <link rel="preload" href="/fonts/MinionPro Font/MinionPro-Regular.ttf" as="font" type="font/ttf" crossorigin>
+    <link rel="preload" href="/fonts/MinionPro Font/MinionPro-Bold.ttf" as="font" type="font/ttf" crossorigin>
+
     <!-- System Fonts -->
 
     <meta property="og:title" content="Alpha Lambda Mu @ UCSD | Muslim Interest Fraternity" />
@@ -23,5 +29,65 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    
+    <!-- Force ProximaNova on all dynamically created elements -->
+    <script>
+      // Observer for dynamically added elements (like Framer Motion)
+      const observer = new MutationObserver((mutations) => {
+        mutations.forEach((mutation) => {
+          mutation.addedNodes.forEach((node) => {
+            if (node.nodeType === 1) { // Element node
+              // Force font on the element itself
+              node.style.fontFamily = '"Minion Pro", serif';
+              
+              // Force font on all children
+              const allElements = node.querySelectorAll('*');
+              allElements.forEach(el => {
+                el.style.fontFamily = '"Minion Pro", serif';
+              });
+            }
+          });
+        });
+      });
+
+      // Function to force font on elements
+      function forceProximaNova() {
+        // Target ALL text elements
+        const selectors = [
+          '*',
+          'p', 'span', 'div', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6',
+          '[class*="text-"]',
+          '[class*="muted"]', 
+          '[class*="gray"]',
+          '[style*="color"]',
+          '[style*="opacity"]'
+        ];
+        
+        selectors.forEach(selector => {
+          try {
+            document.querySelectorAll(selector).forEach(el => {
+              // Force font regardless of current state
+              el.style.setProperty('font-family', '"Minion Pro", serif', 'important');
+            });
+          } catch (e) {
+            // Continue if selector fails
+          }
+        });
+      }
+
+      // Start observing after a short delay to let React mount
+      setTimeout(() => {
+        observer.observe(document.body, {
+          childList: true,
+          subtree: true
+        });
+        
+        // Force font immediately
+        forceProximaNova();
+        
+        // Also run periodically to catch any stubborn elements
+        setInterval(forceProximaNova, 2000);
+      }, 1000);
+    </script>
   </body>
 </html>
